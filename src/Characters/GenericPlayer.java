@@ -1,8 +1,10 @@
-public class Player {
+package Characters;
+
+public class GenericPlayer {
     private Integer healthPoints;
     private String name;
 
-    public Player(String name, Integer healthPoints){
+    public GenericPlayer(String name, Integer healthPoints){
         this.healthPoints = healthPoints;
         this.name = name;
     }

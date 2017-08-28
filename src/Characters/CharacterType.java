@@ -1,37 +1,77 @@
-//import java.util.ArrayList;
-//
-//public class Character {
-//
-//    //general character traits: name, type, experience points, level.
-//    private String type;
-//    private String name;
-//    private Integer xp;
-//    private Integer level;
-//    //character abilities: strength, agility, stamina, intelligence.
-//    private Integer strength;
-//    private Integer agility;
-//    private Integer stamina;
-//    private Integer intelligence;
-//    //inventory
-//    private ArrayList <String> inventory = new ArrayList<>();
-//    private ArrayList <String> spells = new ArrayList<>();
-//
-//    public Character(String name) {
-//        this.type = "Dark Elf";
-//        this.name = name;
-//        this.xp = 0;
-//        this.level = 1;
-//        this.strength = 10;
-//        this.agility = 22;
-//        this.stamina = 15;
-//        this.intelligence = 23;
-//        this.inventory = ["staff of lightning", "robes of minor healing"];
-//        this.spells = ["", ""];
-//    }
+package Characters;
+
+import javax.jws.soap.SOAPBinding;
+import java.util.ArrayList;
+
+public class CharacterType {
+
+    //---------------------------------GERNERAL CHARCTER TRAITS
+    protected String name;
+    protected Integer experiencePoints;
+    protected Integer xpNeeded;
+    protected Integer hitPoints;
+    protected Integer wounds;
+    protected Integer level;
+    protected String type;
+
+    //---------------------------------CHARACTER SKILL POINTS
+    //attack, damage, open doors
+    protected Integer strength;
+    //strength + class bonus
+    protected Integer attackBonus;
+    //languages
+    protected Integer intelligence;
+    //saving throws and spells
+    protected Integer wisdom;
+    //missile attack roll and ac adjustment
+    protected Integer dexterity;
+    //hit points per level
+    protected Integer constitution;
+    //reaction adjustment
+    protected Integer charisma;
+
+    //--------------------------------ARMOR CLASS
+    protected ArrayList<String> inventory;
+
+    //--------------------------------SPELLS
+    protected ArrayList<String> spells;
+
+    public CharacterType(String name) {
+        this.name = name;
+        this.experiencePoints = 0;
+        this.level = 1;
+    }
+
+    public void printCharacterInfo(){
+        System.out.println("--------------------BEGIN STATS-------------------");
+        System.out.println(this.name + " the " + this.type);
+        System.out.println("");
+        System.out.println("XP: " + this.experiencePoints);
+        System.out.println("XP points needed for level up: " + this.xpNeeded);
+        System.out.println("Level: " + this.level);
+        System.out.println("");
+        System.out.println("HP: " + this.hitPoints);
+        System.out.println("Number of wounds: " + this.wounds);
+        System.out.println("");
+        System.out.println("Strength: " + this.strength);
+        System.out.println("Intelligence: " + this.intelligence);
+        System.out.println("Wisdom: " + this.wisdom);
+        System.out.println("Dexterity: " + this.dexterity);
+        System.out.println("Constitution: " + this.constitution);
+        System.out.println("Charisma: " + this.charisma);
+        System.out.println("");
+        System.out.println("Inventory List: " + this.inventory);
+        System.out.println("Spells List: " + this.spells);
+        System.out.println("---------------------END STATS--------------------");
+    }
+}
+
+
+
+
 
     //character race:
     //  dwarf - 22, 16, 25, 12, 25
-    //  high elf - 10, 22, 15, 23, 30
     //  ogre - 30, 15, 25, 15, 15
     //  barbarian - 25, 20, 25, 12, 18
     //  human - 20, 20, 20, 20, 20

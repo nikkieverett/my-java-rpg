@@ -1,9 +1,14 @@
+package GamePlay;
+import Characters.GenericPlayer;
+
+import GamePlay.Dice;
+
 public class Game {
-    private Player player1;
-    private Player player2;
+    private GenericPlayer player1;
+    private GenericPlayer player2;
 
 
-    public Game(Player player1, Player player2) {
+    public Game(GenericPlayer player1, GenericPlayer player2) {
         this.player1 = player1;
         this.player2 = player2;
         System.out.println("Creating a new game between" + player1.getName() + " and " + player2.getName());
@@ -34,7 +39,7 @@ public class Game {
         }
 
         //someone died so print the results
-        System.out.println("Game finished:");
+        System.out.println("GamePlay.Game finished:");
         System.out.println(player1.getName() + " has " + player1.getHealthPoints() + " hp");
         System.out.println(player2.getName() + " has " + player2.getHealthPoints() + " hp");
 
